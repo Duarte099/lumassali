@@ -10,10 +10,7 @@
 
     $sql = "SELECT * FROM administrator WHERE id = " . $_SESSION['id'] . " AND pass = '" . $_SESSION['password'] . "';";
     $result = $con->query($sql);
-    if ($result->num_rows > 0) {
-        
-    }
-    else {
+    if ($result->num_rows == 0) {
         header('Location: login.php');
         exit();
     }
@@ -32,6 +29,10 @@
 </head>
 
 <body>
+    <form action="processar_excel.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="ficheiro_excel" accept=".xlsx,.xls" required>
+        <button type="submit">Enviar</button>
+    </form>
     <form action="adminInserir.php" method=post>
         <div class="container">
             <?php 
