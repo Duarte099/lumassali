@@ -38,9 +38,11 @@
     for ($linha = 2; $linha <= $ultimaLinha; $linha++) {
         $codigo = trim($sheet->getCell("A$linha")->getValue());
         $preco  = $sheet->getCell("F$linha")->getValue();
-        
+
         $sql = "UPDATE secoes_produtos SET precoProduto = $preco WHERE codigo = $codigo;";
         $result = $con->prepare($sql);
         $result->execute();
     }
+
+    header('Location: admin.php');
 ?>
