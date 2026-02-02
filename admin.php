@@ -30,7 +30,7 @@
 
 <body>
     <form action="processar_excel.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="ficheiro_excel" accept=".xlsx,.xls" required>
+        <input type="file" name="importarExcel.php" accept=".xlsx,.xls" required>
         <button type="submit">Enviar</button>
     </form>
     <form action="adminInserir.php" method=post>
